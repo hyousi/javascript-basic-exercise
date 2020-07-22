@@ -6,8 +6,9 @@ export function range(start, end) {
   //
   // * Please implement this function and pass all the tests in range_and_array_spec.js.
   // * Please do NOT modify the signature of the function.
-
-  throw new Error('Please delete this line and implement the function');
+  const length = Math.abs(end - start);
+  const grad = (end - start) > 0 ? 1 : -1;
+  return Array(length).fill(start).map((val, idx) => val + idx * grad);
 }
 
 export function sum(...numbers) {
@@ -18,5 +19,6 @@ export function sum(...numbers) {
   // * Please implement this function and pass all the tests in range_and_array_spec.js.
   // * Please do NOT modify the signature of the function.
 
-  throw new Error('Please delete this line and implement the function');
+  if (numbers == null || [...numbers].length === 0) { return 0; }
+  return [...numbers].reduce((prev, curr) => prev + curr);
 }
